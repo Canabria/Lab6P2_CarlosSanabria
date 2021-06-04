@@ -23,6 +23,15 @@ public class Log_in extends javax.swing.JFrame {
     public Log_in() {
         initComponents();
         DefaultComboBoxModel m= (DefaultComboBoxModel)CB_Falcultad.getModel();
+        m.addElement("Salud");
+        m.addElement("Ingenería");
+        m.addElement("Licenciatura");
+        CB_Falcultad.setModel(m);
+        CB_Falcultad1.setModel(m);
+        DefaultComboBoxModel m1= (DefaultComboBoxModel)CB_Tiempo.getModel();
+        m1.addElement("Trimestral");
+        m1.addElement("Semestral");
+        CB_Tiempo.setModel(m1);
     }
 
     /**
@@ -112,6 +121,7 @@ public class Log_in extends javax.swing.JFrame {
         jLabel43 = new javax.swing.JLabel();
         JS_Punta = new javax.swing.JSpinner();
         JS_Integra = new javax.swing.JSpinner();
+        JD_MenuAdmin = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         TF_User = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -421,6 +431,11 @@ public class Log_in extends javax.swing.JFrame {
         jLabel25.setText("Sección: ");
 
         JB_registrar2.setText("Registrar");
+        JB_registrar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_registrar2MouseClicked(evt);
+            }
+        });
 
         jLabel27.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel27.setText("Codigo de clases:  ");
@@ -522,6 +537,11 @@ public class Log_in extends javax.swing.JFrame {
         jLabel35.setText("Tiempo:");
 
         JB_registrar3.setText("Registrar");
+        JB_registrar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_registrar3MouseClicked(evt);
+            }
+        });
 
         jLabel36.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel36.setText("Titulo:");
@@ -622,6 +642,17 @@ public class Log_in extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(JB_registrar3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JD_MenuAdminLayout = new javax.swing.GroupLayout(JD_MenuAdmin.getContentPane());
+        JD_MenuAdmin.getContentPane().setLayout(JD_MenuAdminLayout);
+        JD_MenuAdminLayout.setHorizontalGroup(
+            JD_MenuAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        JD_MenuAdminLayout.setVerticalGroup(
+            JD_MenuAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -780,14 +811,16 @@ public class Log_in extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
         }
-        TF_Nombre.setText("");
-           TF_Apellido.setText("");
-           TF_Num_regs.setText("");
-           TF_Username.setText("");
-           TF_Contra.setText("");
-           TF_Titulo.setText("");
-           TF_Titulopos.setText("");
-           JS_CantClases.setValue("");
+        TF_Nombre1.setText("");
+           TF_Apellido1.setText("");
+           TF_Num_regs1.setText("");
+           TF_Username1.setText("");
+           TF_Contra1.setText("");
+           JS_edad.setValue(0);
+           TF_ID.setText("");
+           TF_Carrera.setText("");
+           JS_Anos.setValue(0);
+           TF_Promedio.setText("");
            CB_Falcultad.setSelectedIndex(0);
     }//GEN-LAST:event_JB_registrar1ActionPerformed
 
@@ -810,6 +843,82 @@ public class Log_in extends javax.swing.JFrame {
         }
             
     }//GEN-LAST:event_JB_loginMouseClicked
+
+    private void JB_registrar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_registrar2MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            Administrar_Clases ac=
+                    new Administrar_Clases("./Clases.txt");
+            ac.cargarArchivo();
+            
+            String nom;
+            String sec;
+            int code1;
+            int code2;
+            int cant_max;
+            int num_aula;
+            
+            nom=TF_Nombre2.getText();
+            sec=TF_Sección.getText();
+            code1=Integer.parseInt(TF_Codigoc.getText());
+            code2=Integer.parseInt(TF_CodigoCarrera.getText());
+            cant_max=(Integer)JS_Cantalumnos.getValue();
+            num_aula=Integer.parseInt(TF_Aula.getText());
+            Clases cc= new Clases(nom,sec,code1,code2,cant_max,num_aula);
+            ac.getListaClases().add(cc);
+            ac.escribirArchivo();
+            c=ac.getListaClases();
+        } catch (IOException ex) {
+            Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        TF_Nombre2.setText("");
+           TF_Sección.setText("");
+           TF_Codigoc.setText("");
+           TF_CodigoCarrera.setText("");
+           JS_Cantalumnos.setValue(0);
+           TF_Aula.setText("");
+    }//GEN-LAST:event_JB_registrar2MouseClicked
+
+    private void JB_registrar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_registrar3MouseClicked
+        // TODO add your handling code here:
+         try {
+            // TODO add your handling code here:
+            Administrar_Proyecto ap=
+                    new Administrar_Proyecto("./Proyectos.txt");
+            ap.cargarArchivo();
+            
+            String Titulo;
+            String DESCRIP;
+            int punta;
+            int difi;
+            String tiempo="";
+            int inte;
+            String Fechas;
+            
+            Titulo=TF_TituloP.getText();
+            DESCRIP=TF_Descripción.getText();
+            punta=(Integer)JS_Punta.getValue();
+            difi=(Integer)JS_Dificultad.getValue();
+            Object t=CB_Tiempo.getSelectedItem();
+            tiempo+=t;
+            inte=(Integer)JS_Integra.getValue();
+            Fechas=TF_Fecha.getText();
+            Proyecto pp= new Proyecto(Titulo,DESCRIP,punta,difi,tiempo,inte,Fechas);
+            ap.getListaProyecto().add(pp);
+            ap.escribirArchivo();
+            pr=ap.getListaProyecto();
+        } catch (IOException ex) {
+            Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        TF_TituloP.setText("");
+           TF_Descripción.setText("");
+           JS_Punta.setValue(0);
+           JS_Dificultad.setValue(0);
+           CB_Tiempo.setSelectedIndex(0); 
+           JS_Integra.setValue(0);
+           TF_Fecha.setText("");
+    }//GEN-LAST:event_JB_registrar3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -859,6 +968,7 @@ public class Log_in extends javax.swing.JFrame {
     private javax.swing.JDialog JD_AgregarClases;
     private javax.swing.JDialog JD_AgregarDocentes;
     private javax.swing.JDialog JD_AgregarProyectos;
+    private javax.swing.JDialog JD_MenuAdmin;
     private javax.swing.JSpinner JS_Anos;
     private javax.swing.JSpinner JS_CantClases;
     private javax.swing.JSpinner JS_Cantalumnos;
@@ -935,5 +1045,7 @@ public class Log_in extends javax.swing.JFrame {
 ArrayList<Personas>p=new ArrayList();
 ArrayList<Docentes>d=new ArrayList();
 ArrayList<Alumnos>a=new ArrayList();
+ArrayList<Clases>c=new ArrayList();
+ArrayList<Proyecto>pr=new ArrayList();
 int N=0;
 }
