@@ -1,3 +1,10 @@
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +22,7 @@ public class Log_in extends javax.swing.JFrame {
      */
     public Log_in() {
         initComponents();
+        DefaultComboBoxModel m= (DefaultComboBoxModel)CB_Falcultad.getModel();
     }
 
     /**
@@ -26,21 +34,782 @@ public class Log_in extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JD_AgregarDocentes = new javax.swing.JDialog();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        TF_Nombre = new javax.swing.JFormattedTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        TF_Apellido = new javax.swing.JFormattedTextField();
+        TF_Username = new javax.swing.JFormattedTextField();
+        TF_Contra = new javax.swing.JFormattedTextField();
+        TF_Num_regs = new javax.swing.JFormattedTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        TF_Titulo = new javax.swing.JFormattedTextField();
+        TF_Titulopos = new javax.swing.JFormattedTextField();
+        JS_CantClases = new javax.swing.JSpinner();
+        CB_Falcultad = new javax.swing.JComboBox<>();
+        JB_registrar = new javax.swing.JButton();
+        JD_AgregarAlumnos = new javax.swing.JDialog();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        TF_Nombre1 = new javax.swing.JFormattedTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        TF_ID = new javax.swing.JFormattedTextField();
+        jLabel21 = new javax.swing.JLabel();
+        JS_Anos = new javax.swing.JSpinner();
+        TF_Apellido1 = new javax.swing.JFormattedTextField();
+        CB_Falcultad1 = new javax.swing.JComboBox<>();
+        TF_Username1 = new javax.swing.JFormattedTextField();
+        JB_registrar1 = new javax.swing.JButton();
+        TF_Contra1 = new javax.swing.JFormattedTextField();
+        TF_Num_regs1 = new javax.swing.JFormattedTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        JS_edad = new javax.swing.JSpinner();
+        TF_Promedio = new javax.swing.JFormattedTextField();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        TF_Carrera = new javax.swing.JFormattedTextField();
+        JD_AgregarClases = new javax.swing.JDialog();
+        TF_Nombre2 = new javax.swing.JFormattedTextField();
+        TF_CodigoCarrera = new javax.swing.JFormattedTextField();
+        jLabel25 = new javax.swing.JLabel();
+        JB_registrar2 = new javax.swing.JButton();
+        jLabel27 = new javax.swing.JLabel();
+        TF_Codigoc = new javax.swing.JFormattedTextField();
+        TF_Aula = new javax.swing.JFormattedTextField();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        JS_Cantalumnos = new javax.swing.JSpinner();
+        TF_Sección = new javax.swing.JFormattedTextField();
+        JD_AgregarProyectos = new javax.swing.JDialog();
+        TF_Fecha = new javax.swing.JFormattedTextField();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        JB_registrar3 = new javax.swing.JButton();
+        jLabel36 = new javax.swing.JLabel();
+        JS_Dificultad = new javax.swing.JSpinner();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        TF_Descripción = new javax.swing.JFormattedTextField();
+        TF_TituloP = new javax.swing.JFormattedTextField();
+        jLabel40 = new javax.swing.JLabel();
+        CB_Tiempo = new javax.swing.JComboBox<>();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        JS_Punta = new javax.swing.JSpinner();
+        JS_Integra = new javax.swing.JSpinner();
+        jLabel1 = new javax.swing.JLabel();
+        TF_User = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        JB_login = new javax.swing.JButton();
+        PF_pass = new javax.swing.JPasswordField();
+
+        JD_AgregarDocentes.setTitle("Agregar Docentes");
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel4.setText("Agregar Docentes");
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel5.setText("Nombre: ");
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setText("Apellido: ");
+
+        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel7.setText("Numero de Registro:  ");
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setText("Username: ");
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setText("Password: ");
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel10.setText("Titulo: ");
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel11.setText("Titulo Postgrado: ");
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel12.setText("Cantidad de clases enseñadas: ");
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel13.setText("Facultad: ");
+
+        JB_registrar.setText("Registrar");
+        JB_registrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_registrarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JD_AgregarDocentesLayout = new javax.swing.GroupLayout(JD_AgregarDocentes.getContentPane());
+        JD_AgregarDocentes.getContentPane().setLayout(JD_AgregarDocentesLayout);
+        JD_AgregarDocentesLayout.setHorizontalGroup(
+            JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabel4))
+                    .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(53, 53, 53)
+                                .addComponent(TF_Titulopos, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addGap(30, 30, 30)
+                                .addComponent(CB_Falcultad, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addGap(29, 29, 29)
+                                .addComponent(JS_CantClases, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                                    .addComponent(jLabel10)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JD_AgregarDocentesLayout.createSequentialGroup()
+                                    .addComponent(jLabel9)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_Contra, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JD_AgregarDocentesLayout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_Num_regs, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addGap(83, 83, 83)
+                                    .addComponent(TF_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JD_AgregarDocentesLayout.createSequentialGroup()
+                                    .addComponent(jLabel8)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(JB_registrar)))
+                .addContainerGap(76, Short.MAX_VALUE))
+        );
+        JD_AgregarDocentesLayout.setVerticalGroup(
+            JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_AgregarDocentesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(TF_Nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(TF_Apellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(TF_Num_regs, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(TF_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(TF_Contra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(TF_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11)
+                    .addComponent(TF_Titulopos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(JS_CantClases, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel13)
+                    .addComponent(CB_Falcultad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addComponent(JB_registrar)
+                .addContainerGap(57, Short.MAX_VALUE))
+        );
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel14.setText("Nombre: ");
+
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel15.setText("ID: ");
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel16.setText("Carrera: ");
+
+        jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel17.setText("Apellido: ");
+
+        jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel18.setText("Facultad: ");
+
+        jLabel19.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel19.setText("Numero de Registro:  ");
+
+        jLabel20.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel20.setText("Username: ");
+
+        jLabel21.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel21.setText("Password: ");
+
+        JB_registrar1.setText("Registrar");
+        JB_registrar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_registrar1ActionPerformed(evt);
+            }
+        });
+
+        jLabel22.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel22.setText("Agregar Alumnos");
+
+        jLabel23.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel23.setText("Edad: ");
+
+        jLabel44.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel44.setText("Cuantos años lleva en carrera:");
+
+        jLabel45.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel45.setText("Promedio: ");
+
+        javax.swing.GroupLayout JD_AgregarAlumnosLayout = new javax.swing.GroupLayout(JD_AgregarAlumnos.getContentPane());
+        JD_AgregarAlumnos.getContentPane().setLayout(JD_AgregarAlumnosLayout);
+        JD_AgregarAlumnosLayout.setHorizontalGroup(
+            JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabel22))
+                    .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addGap(53, 53, 53)
+                                .addComponent(TF_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JD_AgregarAlumnosLayout.createSequentialGroup()
+                                    .addComponent(jLabel19)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_Num_regs1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                                    .addComponent(jLabel17)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_Apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                                    .addComponent(jLabel14)
+                                    .addGap(83, 83, 83)
+                                    .addComponent(TF_Nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JD_AgregarAlumnosLayout.createSequentialGroup()
+                                    .addComponent(jLabel20)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(TF_Username1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                                    .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel21)
+                                        .addComponent(jLabel23))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(JS_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TF_Contra1, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                                .addComponent(jLabel44)
+                                .addGap(36, 36, 36)
+                                .addComponent(JS_Anos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                                .addComponent(jLabel45)
+                                .addGap(18, 18, 18)
+                                .addComponent(TF_Promedio, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(37, 37, 37)
+                                .addComponent(CB_Falcultad1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addGap(18, 18, 18)
+                                .addComponent(TF_Carrera, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(JB_registrar1)))
+                .addContainerGap(98, Short.MAX_VALUE))
+        );
+        JD_AgregarAlumnosLayout.setVerticalGroup(
+            JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_AgregarAlumnosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel22)
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(TF_Nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(TF_Apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(TF_Num_regs1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(TF_Username1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(TF_Contra1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(JS_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel15)
+                    .addComponent(TF_ID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(TF_Carrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel44)
+                    .addComponent(JS_Anos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel45)
+                    .addComponent(TF_Promedio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(JD_AgregarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(CB_Falcultad1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(JB_registrar1)
+                .addGap(86, 86, 86))
+        );
+
+        jLabel25.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel25.setText("Sección: ");
+
+        JB_registrar2.setText("Registrar");
+
+        jLabel27.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel27.setText("Codigo de clases:  ");
+
+        jLabel28.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel28.setText("Agregar Clases");
+
+        jLabel29.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel29.setText("Codigo de Carrera:");
+
+        jLabel30.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel30.setText("Numero aula: ");
+
+        jLabel31.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel31.setText("Cantidad maxima de alumnos: ");
+
+        jLabel32.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel32.setText("Nombre: ");
+
+        javax.swing.GroupLayout JD_AgregarClasesLayout = new javax.swing.GroupLayout(JD_AgregarClases.getContentPane());
+        JD_AgregarClases.getContentPane().setLayout(JD_AgregarClasesLayout);
+        JD_AgregarClasesLayout.setHorizontalGroup(
+            JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_AgregarClasesLayout.createSequentialGroup()
+                .addGroup(JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JD_AgregarClasesLayout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabel28))
+                    .addGroup(JD_AgregarClasesLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(JD_AgregarClasesLayout.createSequentialGroup()
+                                .addComponent(jLabel30)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TF_Aula, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JD_AgregarClasesLayout.createSequentialGroup()
+                                .addComponent(jLabel31)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(JS_Cantalumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JD_AgregarClasesLayout.createSequentialGroup()
+                                .addComponent(jLabel27)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TF_Codigoc, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarClasesLayout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TF_Sección, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarClasesLayout.createSequentialGroup()
+                                .addComponent(jLabel32)
+                                .addGap(83, 83, 83)
+                                .addComponent(TF_Nombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JD_AgregarClasesLayout.createSequentialGroup()
+                                .addComponent(jLabel29)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                                .addComponent(TF_CodigoCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(JD_AgregarClasesLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(JB_registrar2)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        JD_AgregarClasesLayout.setVerticalGroup(
+            JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_AgregarClasesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel28)
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(TF_Nombre2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(TF_Sección, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(TF_Codigoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel29)
+                    .addComponent(TF_CodigoCarrera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel31)
+                    .addComponent(JS_Cantalumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarClasesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel30)
+                    .addComponent(TF_Aula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(JB_registrar2)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        jLabel34.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel34.setText("Descripción: ");
+
+        jLabel35.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel35.setText("Tiempo:");
+
+        JB_registrar3.setText("Registrar");
+
+        jLabel36.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel36.setText("Titulo:");
+
+        jLabel38.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel38.setText("Fecha de Entrega: ");
+
+        jLabel39.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel39.setText("Puntación:");
+
+        jLabel40.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel40.setText("Agregar Proyectos");
+
+        jLabel41.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel41.setText("Dificultad: ");
+
+        jLabel43.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel43.setText("Cantidad de integrantes: ");
+
+        javax.swing.GroupLayout JD_AgregarProyectosLayout = new javax.swing.GroupLayout(JD_AgregarProyectos.getContentPane());
+        JD_AgregarProyectos.getContentPane().setLayout(JD_AgregarProyectosLayout);
+        JD_AgregarProyectosLayout.setHorizontalGroup(
+            JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_AgregarProyectosLayout.createSequentialGroup()
+                .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JD_AgregarProyectosLayout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(jLabel40))
+                    .addGroup(JD_AgregarProyectosLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JD_AgregarProyectosLayout.createSequentialGroup()
+                                .addComponent(jLabel38)
+                                .addGap(53, 53, 53)
+                                .addComponent(TF_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, JD_AgregarProyectosLayout.createSequentialGroup()
+                                    .addComponent(jLabel43)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(JS_Integra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(JD_AgregarProyectosLayout.createSequentialGroup()
+                                    .addComponent(jLabel34)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                                    .addComponent(TF_Descripción, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(JD_AgregarProyectosLayout.createSequentialGroup()
+                                    .addComponent(jLabel36)
+                                    .addGap(83, 83, 83)
+                                    .addComponent(TF_TituloP, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(JD_AgregarProyectosLayout.createSequentialGroup()
+                                    .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel41)
+                                        .addComponent(jLabel39)
+                                        .addComponent(jLabel35))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(CB_Tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JS_Punta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(JS_Dificultad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(22, 22, 22)))))
+                    .addGroup(JD_AgregarProyectosLayout.createSequentialGroup()
+                        .addGap(141, 141, 141)
+                        .addComponent(JB_registrar3)))
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
+        JD_AgregarProyectosLayout.setVerticalGroup(
+            JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_AgregarProyectosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel40)
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(TF_TituloP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel34)
+                    .addComponent(TF_Descripción, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel39)
+                    .addComponent(JS_Punta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel41)
+                    .addComponent(JS_Dificultad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(CB_Tiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel43)
+                    .addComponent(JS_Integra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JD_AgregarProyectosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel38)
+                    .addComponent(TF_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(JB_registrar3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setText("Log in:");
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setText("Username: ");
+
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel3.setText("Password: ");
+
+        JB_login.setText("Log_in");
+        JB_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_loginMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(53, 53, 53)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(PF_pass, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                            .addComponent(TF_User)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(JB_login)))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TF_User, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(77, 77, 77)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(PF_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(66, 66, 66)
+                .addComponent(JB_login)
+                .addContainerGap(94, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JB_registrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_registrarMouseClicked
+        try {
+            // TODO add your handling code here:
+            Administrar_Personas ap=
+                    new Administrar_Personas("./Usuarios.txt");
+            ap.cargarArchivo();
+            Administrar_Docente ad=
+                    new Administrar_Docente("./Docentes.txt");
+            ad.cargarArchivo();
+            String nom;
+            String apellido;
+            String num_reg;
+            String username;
+            String password;
+            String Titulo;
+            String Titulo_pos;
+            int cant_clases;
+            String fac="";
+            nom=TF_Nombre.getText();
+            apellido=TF_Apellido.getText();
+            num_reg=TF_Num_regs.getText();
+            username=TF_Username.getText();
+            password=TF_Contra.getText();
+            Titulo=TF_Titulo.getText();
+            Titulo_pos=TF_Titulopos.getText();
+            cant_clases=(Integer)JS_CantClases.getValue();
+            Object t=CB_Falcultad.getSelectedItem();
+            fac+=t;
+            Personas pp= new Docentes(Titulo,Titulo_pos,cant_clases,fac,nom,apellido,num_reg,username,password);
+            Docentes dd= new Docentes(Titulo,Titulo_pos,cant_clases,fac,nom,apellido,num_reg,username,password);
+            ap.getListaPersonas().add(pp);
+            ad.getListaDocentes().add(dd);
+            ap.escribirArchivo();
+            ad.escribirArchivo();
+            p=ap.getListaPersonas();
+            d=ad.getListaDocentes();
+        } catch (IOException ex) {
+            Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        TF_Nombre.setText("");
+           TF_Apellido.setText("");
+           TF_Num_regs.setText("");
+           TF_Username.setText("");
+           TF_Contra.setText("");
+           TF_Titulo.setText("");
+           TF_Titulopos.setText("");
+           JS_CantClases.setValue("");
+           CB_Falcultad.setSelectedIndex(0);
+    }//GEN-LAST:event_JB_registrarMouseClicked
+
+    private void JB_registrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_registrar1ActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            Administrar_Personas ap=
+                    new Administrar_Personas("./Usuarios.txt");
+            ap.cargarArchivo();
+            Administrar_Alumnos aa=
+                    new Administrar_Alumnos("./Alumnos.txt");
+            aa.cargarArchivo();
+            String nom;
+            String apellido;
+            String num_reg;
+            String username;
+            String password;
+             int edad;
+            String ID;
+            String carrera;
+            int anos_carrera;
+            double promedio;
+            String fac="";
+            nom=TF_Nombre1.getText();
+            apellido=TF_Apellido1.getText();
+            num_reg=TF_Num_regs1.getText();
+            username=TF_Username1.getText();
+            password=TF_Contra1.getText();
+            edad=(Integer)JS_edad.getValue();
+            ID=TF_ID.getText();
+            carrera=TF_Carrera.getText();
+            anos_carrera=(Integer)JS_Anos.getValue();
+            promedio=Double.parseDouble(TF_Promedio.getText());
+            Object t=CB_Falcultad.getSelectedItem();
+            fac+=t;
+            Personas pp= new Alumnos(edad,ID,carrera,anos_carrera,promedio,fac,nom,apellido,num_reg,username,password);
+            Alumnos dd= new Alumnos(edad,ID,carrera,anos_carrera,promedio,fac,nom,apellido,num_reg,username,password);
+            ap.getListaPersonas().add(pp);
+            aa.getListaAlumnos().add(dd);
+            ap.escribirArchivo();
+            aa.escribirArchivo();
+            p=ap.getListaPersonas();
+            a=aa.getListaAlumnos();
+        } catch (IOException ex) {
+            Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        TF_Nombre.setText("");
+           TF_Apellido.setText("");
+           TF_Num_regs.setText("");
+           TF_Username.setText("");
+           TF_Contra.setText("");
+           TF_Titulo.setText("");
+           TF_Titulopos.setText("");
+           JS_CantClases.setValue("");
+           CB_Falcultad.setSelectedIndex(0);
+    }//GEN-LAST:event_JB_registrar1ActionPerformed
+
+    private void JB_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_loginMouseClicked
+        // TODO add your handling code here:
+        Administrar_Personas ap=
+                    new Administrar_Personas("./Usuarios.txt");
+            ap.cargarArchivo();
+            int n=0;
+            for (int i = 0; i < ap.getListaPersonas().size(); i++) {
+            if(ap.getListaPersonas().get(i).getUsername().equalsIgnoreCase("Admin")&&ap.getListaPersonas().get(i).getPassword().equalsIgnoreCase("1234")){
+                n=1;
+            }else if(ap.getListaPersonas().get(i).getUsername().equalsIgnoreCase(TF_User.getText())&&ap.getListaPersonas().get(i).getPassword().equalsIgnoreCase(PF_pass.getText())&& ap.getListaPersonas().get(i) instanceof Docentes){
+                N=i;
+                n=2;
+            }else if(ap.getListaPersonas().get(i).getUsername().equalsIgnoreCase(TF_User.getText())&&ap.getListaPersonas().get(i).getPassword().equalsIgnoreCase(PF_pass.getText())&& ap.getListaPersonas().get(i) instanceof Alumnos){
+                N=i;
+                n=3;
+            }
+        }
+            
+    }//GEN-LAST:event_JB_loginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -78,5 +847,93 @@ public class Log_in extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CB_Falcultad;
+    private javax.swing.JComboBox<String> CB_Falcultad1;
+    private javax.swing.JComboBox<String> CB_Tiempo;
+    private javax.swing.JButton JB_login;
+    private javax.swing.JButton JB_registrar;
+    private javax.swing.JButton JB_registrar1;
+    private javax.swing.JButton JB_registrar2;
+    private javax.swing.JButton JB_registrar3;
+    private javax.swing.JDialog JD_AgregarAlumnos;
+    private javax.swing.JDialog JD_AgregarClases;
+    private javax.swing.JDialog JD_AgregarDocentes;
+    private javax.swing.JDialog JD_AgregarProyectos;
+    private javax.swing.JSpinner JS_Anos;
+    private javax.swing.JSpinner JS_CantClases;
+    private javax.swing.JSpinner JS_Cantalumnos;
+    private javax.swing.JSpinner JS_Dificultad;
+    private javax.swing.JSpinner JS_Integra;
+    private javax.swing.JSpinner JS_Punta;
+    private javax.swing.JSpinner JS_edad;
+    private javax.swing.JPasswordField PF_pass;
+    private javax.swing.JFormattedTextField TF_Apellido;
+    private javax.swing.JFormattedTextField TF_Apellido1;
+    private javax.swing.JFormattedTextField TF_Aula;
+    private javax.swing.JFormattedTextField TF_Carrera;
+    private javax.swing.JFormattedTextField TF_CodigoCarrera;
+    private javax.swing.JFormattedTextField TF_Codigoc;
+    private javax.swing.JFormattedTextField TF_Contra;
+    private javax.swing.JFormattedTextField TF_Contra1;
+    private javax.swing.JFormattedTextField TF_Descripción;
+    private javax.swing.JFormattedTextField TF_Fecha;
+    private javax.swing.JFormattedTextField TF_ID;
+    private javax.swing.JFormattedTextField TF_Nombre;
+    private javax.swing.JFormattedTextField TF_Nombre1;
+    private javax.swing.JFormattedTextField TF_Nombre2;
+    private javax.swing.JFormattedTextField TF_Num_regs;
+    private javax.swing.JFormattedTextField TF_Num_regs1;
+    private javax.swing.JFormattedTextField TF_Promedio;
+    private javax.swing.JFormattedTextField TF_Sección;
+    private javax.swing.JFormattedTextField TF_Titulo;
+    private javax.swing.JFormattedTextField TF_TituloP;
+    private javax.swing.JFormattedTextField TF_Titulopos;
+    private javax.swing.JTextField TF_User;
+    private javax.swing.JFormattedTextField TF_Username;
+    private javax.swing.JFormattedTextField TF_Username1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
+ArrayList<Personas>p=new ArrayList();
+ArrayList<Docentes>d=new ArrayList();
+ArrayList<Alumnos>a=new ArrayList();
+int N=0;
 }
