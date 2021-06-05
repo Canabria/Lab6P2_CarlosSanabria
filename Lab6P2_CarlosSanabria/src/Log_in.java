@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -122,6 +124,44 @@ public class Log_in extends javax.swing.JFrame {
         JS_Punta = new javax.swing.JSpinner();
         JS_Integra = new javax.swing.JSpinner();
         JD_MenuAdmin = new javax.swing.JDialog();
+        jToolBar3 = new javax.swing.JToolBar();
+        JB_SalirCuentaAdmin = new javax.swing.JButton();
+        JB_SalirSistemaAdmin = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
+        jMenuItem12 = new javax.swing.JMenuItem();
+        jMenuItem13 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem14 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
+        jMenuItem17 = new javax.swing.JMenuItem();
+        JD_ListarAlumnos = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        JT_ListarAlumnos = new javax.swing.JTable();
+        JD_EliminarAlumnos = new javax.swing.JDialog();
+        CB_EliminarAlumnos = new javax.swing.JComboBox<>();
+        JB_ElminiarAlumnos = new javax.swing.JButton();
+        JD_ModificarAlumnos = new javax.swing.JDialog();
+        CB_ModificarAlumnos = new javax.swing.JComboBox<>();
+        JB_ModificarAlumnos = new javax.swing.JButton();
+        jMenuItem10 = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         TF_User = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -644,16 +684,262 @@ public class Log_in extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jToolBar3.setRollover(true);
+
+        JB_SalirCuentaAdmin.setText("Salir Cuenta");
+        JB_SalirCuentaAdmin.setFocusable(false);
+        JB_SalirCuentaAdmin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        JB_SalirCuentaAdmin.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar3.add(JB_SalirCuentaAdmin);
+
+        JB_SalirSistemaAdmin.setText("Salir sistema");
+        JB_SalirSistemaAdmin.setFocusable(false);
+        JB_SalirSistemaAdmin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        JB_SalirSistemaAdmin.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar3.add(JB_SalirSistemaAdmin);
+
+        jMenu1.setText("Adminstracion Maestros");
+
+        jMenu5.setText("Crud Maestros");
+
+        jMenuItem1.setText("AGREGAR");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem1);
+
+        jMenuItem2.setText("LISTAR");
+        jMenu5.add(jMenuItem2);
+
+        jMenuItem3.setText("MODIFICAR");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem3);
+
+        jMenuItem4.setText("ELIMINAR");
+        jMenu5.add(jMenuItem4);
+
+        jMenu1.add(jMenu5);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Adminstracion de Clases");
+
+        jMenu6.setText("Crud");
+
+        jMenuItem5.setText("AGREGAR");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem5);
+
+        jMenuItem6.setText("LISTAR");
+        jMenu6.add(jMenuItem6);
+
+        jMenuItem7.setText("MODIFICAR");
+        jMenu6.add(jMenuItem7);
+
+        jMenuItem8.setText("ELIMINAR");
+        jMenu6.add(jMenuItem8);
+
+        jMenu2.add(jMenu6);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Adminstracion de Alumnos");
+
+        jMenu7.setText("Crud");
+
+        jMenuItem9.setText("AGREGAR");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem9);
+
+        jMenuItem11.setText("LISTAR");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem11);
+
+        jMenuItem12.setText("MODIFICAR");
+        jMenuItem12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem12ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem12);
+
+        jMenuItem13.setText("ELIMINAR");
+        jMenuItem13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem13ActionPerformed(evt);
+            }
+        });
+        jMenu7.add(jMenuItem13);
+
+        jMenu3.add(jMenu7);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Administracion de Proyectos");
+
+        jMenu8.setText("Crud");
+
+        jMenuItem14.setText("AGREGAR");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
+        jMenu8.add(jMenuItem14);
+
+        jMenuItem15.setText("LISTAR");
+        jMenu8.add(jMenuItem15);
+
+        jMenuItem16.setText("MODIFICAR");
+        jMenu8.add(jMenuItem16);
+
+        jMenuItem17.setText("ELIMINAR");
+        jMenu8.add(jMenuItem17);
+
+        jMenu4.add(jMenu8);
+
+        jMenuBar1.add(jMenu4);
+
+        JD_MenuAdmin.setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout JD_MenuAdminLayout = new javax.swing.GroupLayout(JD_MenuAdmin.getContentPane());
         JD_MenuAdmin.getContentPane().setLayout(JD_MenuAdminLayout);
         JD_MenuAdminLayout.setHorizontalGroup(
             JD_MenuAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(JD_MenuAdminLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jToolBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(447, Short.MAX_VALUE))
         );
         JD_MenuAdminLayout.setVerticalGroup(
             JD_MenuAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(JD_MenuAdminLayout.createSequentialGroup()
+                .addComponent(jToolBar3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 363, Short.MAX_VALUE))
         );
+
+        JT_ListarAlumnos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Apellido", "Numero Registro", "Edad", "ID", "Carrera", "Años en Carrera", "Promedio", "Facultad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, true, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(JT_ListarAlumnos);
+
+        javax.swing.GroupLayout JD_ListarAlumnosLayout = new javax.swing.GroupLayout(JD_ListarAlumnos.getContentPane());
+        JD_ListarAlumnos.getContentPane().setLayout(JD_ListarAlumnosLayout);
+        JD_ListarAlumnosLayout.setHorizontalGroup(
+            JD_ListarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_ListarAlumnosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 932, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        JD_ListarAlumnosLayout.setVerticalGroup(
+            JD_ListarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_ListarAlumnosLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        JB_ElminiarAlumnos.setText("ELiminar Alumno");
+        JB_ElminiarAlumnos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_ElminiarAlumnosMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JD_EliminarAlumnosLayout = new javax.swing.GroupLayout(JD_EliminarAlumnos.getContentPane());
+        JD_EliminarAlumnos.getContentPane().setLayout(JD_EliminarAlumnosLayout);
+        JD_EliminarAlumnosLayout.setHorizontalGroup(
+            JD_EliminarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_EliminarAlumnosLayout.createSequentialGroup()
+                .addGroup(JD_EliminarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JD_EliminarAlumnosLayout.createSequentialGroup()
+                        .addGap(83, 83, 83)
+                        .addComponent(CB_EliminarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 807, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JD_EliminarAlumnosLayout.createSequentialGroup()
+                        .addGap(340, 340, 340)
+                        .addComponent(JB_ElminiarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        JD_EliminarAlumnosLayout.setVerticalGroup(
+            JD_EliminarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_EliminarAlumnosLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(CB_EliminarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82)
+                .addComponent(JB_ElminiarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        JB_ModificarAlumnos.setText("MODFICAR ALUMNOS");
+        JB_ModificarAlumnos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_ModificarAlumnosMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JD_ModificarAlumnosLayout = new javax.swing.GroupLayout(JD_ModificarAlumnos.getContentPane());
+        JD_ModificarAlumnos.getContentPane().setLayout(JD_ModificarAlumnosLayout);
+        JD_ModificarAlumnosLayout.setHorizontalGroup(
+            JD_ModificarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JD_ModificarAlumnosLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(CB_ModificarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 775, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76))
+            .addGroup(JD_ModificarAlumnosLayout.createSequentialGroup()
+                .addGap(394, 394, 394)
+                .addComponent(JB_ModificarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        JD_ModificarAlumnosLayout.setVerticalGroup(
+            JD_ModificarAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_ModificarAlumnosLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(CB_ModificarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91)
+                .addComponent(JB_ModificarAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(71, Short.MAX_VALUE))
+        );
+
+        jMenuItem10.setText("jMenuItem10");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -808,6 +1094,32 @@ public class Log_in extends javax.swing.JFrame {
             aa.escribirArchivo();
             p=ap.getListaPersonas();
             a=aa.getListaAlumnos();
+            DefaultComboBoxModel modelo
+                = (DefaultComboBoxModel) CB_ModificarAlumnos.getModel();
+        modelo.addElement(new Alumnos(edad,ID,carrera,anos_carrera,promedio,fac,nom,apellido,num_reg,username,password));
+        CB_ModificarAlumnos.setModel(modelo);
+        CB_EliminarAlumnos.setModel(modelo);
+        
+        
+        
+        Alumnos doc = new Alumnos(edad,ID,carrera,anos_carrera,promedio,fac,nom,apellido,num_reg,username,password);
+        Object[] newrow = {
+            doc.getNom(),
+            doc.getApellido(),
+            doc.getNum_reg(),
+            doc.getEdad(),
+            doc.getID(),
+            doc.getCarrera(),
+            doc.getAnos_carrera(),
+            doc.getPromedio(),
+            doc.getFac(),
+            
+        };
+        DefaultTableModel modelo1
+                = (DefaultTableModel) JT_ListarAlumnos.getModel();
+        modelo1.addRow(newrow);
+        JT_ListarAlumnos.setModel(modelo1);
+        
         } catch (IOException ex) {
             Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -833,6 +1145,7 @@ public class Log_in extends javax.swing.JFrame {
             for (int i = 0; i < ap.getListaPersonas().size(); i++) {
             if(ap.getListaPersonas().get(i).getUsername().equalsIgnoreCase("Admin")&&ap.getListaPersonas().get(i).getPassword().equalsIgnoreCase("1234")){
                 n=1;
+                JD_MENUADMIN();
             }else if(ap.getListaPersonas().get(i).getUsername().equalsIgnoreCase(TF_User.getText())&&ap.getListaPersonas().get(i).getPassword().equalsIgnoreCase(PF_pass.getText())&& ap.getListaPersonas().get(i) instanceof Docentes){
                 N=i;
                 n=2;
@@ -920,6 +1233,172 @@ public class Log_in extends javax.swing.JFrame {
            TF_Fecha.setText("");
     }//GEN-LAST:event_JB_registrar3MouseClicked
 
+    private void JB_ElminiarAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ElminiarAlumnosMouseClicked
+        // TODO add your handling code here:
+       try {
+            // TODO add your handling code here:
+            Administrar_Alumnos ac=
+                    new Administrar_Alumnos("./Alumnos.txt");
+            int pos;
+            pos= CB_EliminarAlumnos.getSelectedIndex();
+            
+            ac.cargarArchivo();
+            ac.getListaAlumnos().remove(pos);
+            ac.escribirArchivo();
+            
+             DefaultComboBoxModel modelo
+                = (DefaultComboBoxModel) CB_EliminarAlumnos.getModel();
+             modelo.removeElementAt(pos);
+             CB_EliminarAlumnos.setModel(modelo);
+             CB_ModificarAlumnos.setModel(modelo);
+             
+             
+                if (JT_ListarAlumnos.getSelectedRow() >= 0) {
+                    DefaultTableModel modelo1
+                            = (DefaultTableModel) JT_ListarAlumnos.getModel();
+                    modelo1.removeRow(pos);
+                    JT_ListarAlumnos.setModel(modelo1);
+                    
+                    
+                }
+             a=ac.getListaAlumnos();
+             
+        } catch (IOException ex) {
+           Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_JB_ElminiarAlumnosMouseClicked
+
+    private void JB_ModificarAlumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModificarAlumnosMouseClicked
+        // TODO add your handling code here:
+         try {
+            Administrar_Alumnos aa
+                    = new Administrar_Alumnos("./Alumnos.txt");
+            int p;
+
+            p = CB_ModificarAlumnos.getSelectedIndex();
+            aa.cargarArchivo();
+            aa.getListaAlumnos().get(p).setFac(JOptionPane.showInputDialog("Facultad: "));
+            aa.getListaAlumnos().get(p).setNom(JOptionPane.showInputDialog("Nombre del Alumno: "));
+            aa.getListaAlumnos().get(p).setApellido(JOptionPane.showInputDialog("Apellido del Alumno: "));
+            aa.getListaAlumnos().get(p).setAnos_carrera(Integer.parseInt(JOptionPane.showInputDialog("A de Carrera: ")));
+            aa.getListaAlumnos().get(p).setNum_reg(JOptionPane.showInputDialog("Numero de Registro: "));
+            aa.getListaAlumnos().get(p).setEdad(Integer.parseInt(JOptionPane.showInputDialog("Edad: ")));
+            aa.getListaAlumnos().get(p).setCarrera(JOptionPane.showInputDialog("Carrera: "));
+            aa.getListaAlumnos().get(p).setID(JOptionPane.showInputDialog("ID: "));
+            aa.getListaAlumnos().get(p).setPromedio(Double.parseDouble(JOptionPane.showInputDialog("Promedio: ")));
+
+            aa.escribirArchivo();
+            
+            DefaultComboBoxModel modelo
+                = (DefaultComboBoxModel) CB_ModificarAlumnos.getModel();
+            ((Alumnos)modelo.getSelectedItem()).setApellido(aa.getListaAlumnos().get(p).getApellido());
+            ((Alumnos)modelo.getSelectedItem()).setNom(aa.getListaAlumnos().get(p).getNom());
+            ((Alumnos)modelo.getSelectedItem()).setNum_reg(aa.getListaAlumnos().get(p).getNum_reg());
+            ((Alumnos)modelo.getSelectedItem()).setFac(aa.getListaAlumnos().get(p).getFac());
+            ((Alumnos)modelo.getSelectedItem()).setAnos_carrera(aa.getListaAlumnos().get(p).getAnos_carrera());
+            ((Alumnos)modelo.getSelectedItem()).setEdad(aa.getListaAlumnos().get(p).getEdad());
+            ((Alumnos)modelo.getSelectedItem()).setID(aa.getListaAlumnos().get(p).getID());
+            ((Alumnos)modelo.getSelectedItem()).setPromedio(aa.getListaAlumnos().get(p).getPromedio());
+            
+            
+            
+            a =aa.getListaAlumnos();
+            CB_ModificarAlumnos.setModel(modelo);
+          
+            CB_EliminarAlumnos.setModel(modelo);
+                    
+        } catch (IOException ex) {
+            Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+    }//GEN-LAST:event_JB_ModificarAlumnosMouseClicked
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+        JD_AAGREGAR();
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        // TODO add your handling code here:
+        JD_ALISTAR();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        JD_AMODIFICAR();
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        // TODO add your handling code here:
+        JD_AELIMINAR();
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        JD_DAGREGAR();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+        JD_CAGREGAR();
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        // TODO add your handling code here:
+        JD_PAGREGAR();
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
+public void JD_MENUADMIN(){
+    JD_MenuAdmin.pack();
+        JD_MenuAdmin.setModal(true);
+        JD_MenuAdmin.setLocationRelativeTo(this);
+        JD_MenuAdmin.setVisible(true);
+}
+public void JD_AAGREGAR(){
+    JD_AgregarAlumnos.pack();
+        JD_AgregarAlumnos.setModal(true);
+        JD_AgregarAlumnos.setLocationRelativeTo(this);
+        JD_AgregarAlumnos.setVisible(true);
+}
+public void JD_DAGREGAR(){
+    JD_AgregarDocentes.pack();
+        JD_AgregarDocentes.setModal(true);
+        JD_AgregarDocentes.setLocationRelativeTo(this);
+        JD_AgregarDocentes.setVisible(true);
+}
+public void JD_CAGREGAR(){
+    JD_AgregarClases.pack();
+        JD_AgregarClases.setModal(true);
+        JD_AgregarClases.setLocationRelativeTo(this);
+        JD_AgregarClases.setVisible(true);
+}
+public void JD_PAGREGAR(){
+    JD_AgregarProyectos.pack();
+        JD_AgregarProyectos.setModal(true);
+        JD_AgregarProyectos.setLocationRelativeTo(this);
+        JD_AgregarProyectos.setVisible(true);
+}
+public void JD_ALISTAR(){
+    JD_ListarAlumnos.pack();
+        JD_ListarAlumnos.setModal(true);
+        JD_ListarAlumnos.setLocationRelativeTo(this);
+        JD_ListarAlumnos.setVisible(true);
+}
+public void JD_AMODIFICAR(){
+    JD_ModificarAlumnos.pack();
+        JD_ModificarAlumnos.setModal(true);
+        JD_ModificarAlumnos.setLocationRelativeTo(this);
+        JD_ModificarAlumnos.setVisible(true);
+}
+public void JD_AELIMINAR(){
+    JD_EliminarAlumnos.pack();
+        JD_EliminarAlumnos.setModal(true);
+        JD_EliminarAlumnos.setLocationRelativeTo(this);
+        JD_EliminarAlumnos.setVisible(true);
+}
     /**
      * @param args the command line arguments
      */
@@ -956,9 +1435,15 @@ public class Log_in extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CB_EliminarAlumnos;
     private javax.swing.JComboBox<String> CB_Falcultad;
     private javax.swing.JComboBox<String> CB_Falcultad1;
+    private javax.swing.JComboBox<String> CB_ModificarAlumnos;
     private javax.swing.JComboBox<String> CB_Tiempo;
+    private javax.swing.JButton JB_ElminiarAlumnos;
+    private javax.swing.JButton JB_ModificarAlumnos;
+    private javax.swing.JButton JB_SalirCuentaAdmin;
+    private javax.swing.JButton JB_SalirSistemaAdmin;
     private javax.swing.JButton JB_login;
     private javax.swing.JButton JB_registrar;
     private javax.swing.JButton JB_registrar1;
@@ -968,7 +1453,10 @@ public class Log_in extends javax.swing.JFrame {
     private javax.swing.JDialog JD_AgregarClases;
     private javax.swing.JDialog JD_AgregarDocentes;
     private javax.swing.JDialog JD_AgregarProyectos;
+    private javax.swing.JDialog JD_EliminarAlumnos;
+    private javax.swing.JDialog JD_ListarAlumnos;
     private javax.swing.JDialog JD_MenuAdmin;
+    private javax.swing.JDialog JD_ModificarAlumnos;
     private javax.swing.JSpinner JS_Anos;
     private javax.swing.JSpinner JS_CantClases;
     private javax.swing.JSpinner JS_Cantalumnos;
@@ -976,6 +1464,7 @@ public class Log_in extends javax.swing.JFrame {
     private javax.swing.JSpinner JS_Integra;
     private javax.swing.JSpinner JS_Punta;
     private javax.swing.JSpinner JS_edad;
+    private javax.swing.JTable JT_ListarAlumnos;
     private javax.swing.JPasswordField PF_pass;
     private javax.swing.JFormattedTextField TF_Apellido;
     private javax.swing.JFormattedTextField TF_Apellido1;
@@ -1041,6 +1530,34 @@ public class Log_in extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
+    private javax.swing.JMenuItem jMenuItem12;
+    private javax.swing.JMenuItem jMenuItem13;
+    private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
+    private javax.swing.JMenuItem jMenuItem17;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JToolBar jToolBar3;
     // End of variables declaration//GEN-END:variables
 ArrayList<Personas>p=new ArrayList();
 ArrayList<Docentes>d=new ArrayList();
