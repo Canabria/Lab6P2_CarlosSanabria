@@ -162,6 +162,9 @@ public class Log_in extends javax.swing.JFrame {
         CB_ModificarAlumnos = new javax.swing.JComboBox<>();
         JB_ModificarAlumnos = new javax.swing.JButton();
         jMenuItem10 = new javax.swing.JMenuItem();
+        JD_ListarDocentes = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        JT_ListarMaestros = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         TF_User = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -333,6 +336,11 @@ public class Log_in extends javax.swing.JFrame {
         jLabel21.setText("Password: ");
 
         JB_registrar1.setText("Registrar");
+        JB_registrar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_registrar1MouseClicked(evt);
+            }
+        });
         JB_registrar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JB_registrar1ActionPerformed(evt);
@@ -711,6 +719,11 @@ public class Log_in extends javax.swing.JFrame {
         jMenu5.add(jMenuItem1);
 
         jMenuItem2.setText("LISTAR");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem2);
 
         jMenuItem3.setText("MODIFICAR");
@@ -941,6 +954,48 @@ public class Log_in extends javax.swing.JFrame {
 
         jMenuItem10.setText("jMenuItem10");
 
+        JT_ListarMaestros.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Apellido", "Numero Registro", "Titulo", "Postgrado", "Cantidad Clases", "Facultad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(JT_ListarMaestros);
+
+        javax.swing.GroupLayout JD_ListarDocentesLayout = new javax.swing.GroupLayout(JD_ListarDocentes.getContentPane());
+        JD_ListarDocentes.getContentPane().setLayout(JD_ListarDocentesLayout);
+        JD_ListarDocentesLayout.setHorizontalGroup(
+            JD_ListarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_ListarDocentesLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        JD_ListarDocentesLayout.setVerticalGroup(
+            JD_ListarDocentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_ListarDocentesLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -1039,6 +1094,20 @@ public class Log_in extends javax.swing.JFrame {
             ad.escribirArchivo();
             p=ap.getListaPersonas();
             d=ad.getListaDocentes();
+             Docentes doc = new Docentes(Titulo, Titulo_pos, cant_clases, fac, nom, apellido, num_reg, username, password);
+            Object[] newrow = {
+                doc.getNom(),
+                doc.getApellido(),
+                doc.getNum_reg(),
+                doc.getTitulo(),
+                doc.getTitulo_pos(),
+                doc.getCant_clases(),
+                doc.getFac()
+            };
+            DefaultTableModel modelo1
+                    = (DefaultTableModel) JT_ListarMaestros.getModel();
+            modelo1.addRow(newrow);
+            JT_ListarMaestros.setModel(modelo1);
         } catch (IOException ex) {
             Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1055,85 +1124,7 @@ public class Log_in extends javax.swing.JFrame {
 
     private void JB_registrar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_registrar1ActionPerformed
         // TODO add your handling code here:
-        try {
-            // TODO add your handling code here:
-            Administrar_Personas ap=
-                    new Administrar_Personas("./Usuarios.txt");
-            ap.cargarArchivo();
-            Administrar_Alumnos aa=
-                    new Administrar_Alumnos("./Alumnos.txt");
-            aa.cargarArchivo();
-            String nom;
-            String apellido;
-            String num_reg;
-            String username;
-            String password;
-             int edad;
-            String ID;
-            String carrera;
-            int anos_carrera;
-            double promedio;
-            String fac="";
-            nom=TF_Nombre1.getText();
-            apellido=TF_Apellido1.getText();
-            num_reg=TF_Num_regs1.getText();
-            username=TF_Username1.getText();
-            password=TF_Contra1.getText();
-            edad=(Integer)JS_edad.getValue();
-            ID=TF_ID.getText();
-            carrera=TF_Carrera.getText();
-            anos_carrera=(Integer)JS_Anos.getValue();
-            promedio=Double.parseDouble(TF_Promedio.getText());
-            Object t=CB_Falcultad.getSelectedItem();
-            fac+=t;
-            Personas pp= new Alumnos(edad,ID,carrera,anos_carrera,promedio,fac,nom,apellido,num_reg,username,password);
-            Alumnos dd= new Alumnos(edad,ID,carrera,anos_carrera,promedio,fac,nom,apellido,num_reg,username,password);
-            ap.getListaPersonas().add(pp);
-            aa.getListaAlumnos().add(dd);
-            ap.escribirArchivo();
-            aa.escribirArchivo();
-            p=ap.getListaPersonas();
-            a=aa.getListaAlumnos();
-            DefaultComboBoxModel modelo
-                = (DefaultComboBoxModel) CB_ModificarAlumnos.getModel();
-        modelo.addElement(new Alumnos(edad,ID,carrera,anos_carrera,promedio,fac,nom,apellido,num_reg,username,password));
-        CB_ModificarAlumnos.setModel(modelo);
-        CB_EliminarAlumnos.setModel(modelo);
-        
-        
-        
-        Alumnos doc = new Alumnos(edad,ID,carrera,anos_carrera,promedio,fac,nom,apellido,num_reg,username,password);
-        Object[] newrow = {
-            doc.getNom(),
-            doc.getApellido(),
-            doc.getNum_reg(),
-            doc.getEdad(),
-            doc.getID(),
-            doc.getCarrera(),
-            doc.getAnos_carrera(),
-            doc.getPromedio(),
-            doc.getFac(),
-            
-        };
-        DefaultTableModel modelo1
-                = (DefaultTableModel) JT_ListarAlumnos.getModel();
-        modelo1.addRow(newrow);
-        JT_ListarAlumnos.setModel(modelo1);
-        
-        } catch (IOException ex) {
-            Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        TF_Nombre1.setText("");
-           TF_Apellido1.setText("");
-           TF_Num_regs1.setText("");
-           TF_Username1.setText("");
-           TF_Contra1.setText("");
-           JS_edad.setValue(0);
-           TF_ID.setText("");
-           TF_Carrera.setText("");
-           JS_Anos.setValue(0);
-           TF_Promedio.setText("");
-           CB_Falcultad.setSelectedIndex(0);
+       
     }//GEN-LAST:event_JB_registrar1ActionPerformed
 
     private void JB_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_loginMouseClicked
@@ -1351,6 +1342,93 @@ public class Log_in extends javax.swing.JFrame {
         // TODO add your handling code here:
         JD_PAGREGAR();
     }//GEN-LAST:event_jMenuItem14ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        JD_DLISTAR();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void JB_registrar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_registrar1MouseClicked
+        try {
+            // TODO add your handling code here:
+            Administrar_Personas ap
+                    = new Administrar_Personas("./Users.txt");
+            ap.cargarArchivo();
+            Administrar_Alumnos aa
+                    = new Administrar_Alumnos("./Alumnos.txt");
+            aa.cargarArchivo();
+            String nom;
+            String apellido;
+            String num_reg;
+            String username;
+            String password;
+            int edad;
+            String ID;
+            String carrera;
+            int anos_carrera;
+            double promedio;
+            String fac = "";
+            nom = TF_Nombre1.getText();
+            apellido = TF_Apellido1.getText();
+            num_reg = TF_Num_regs1.getText();
+            username = TF_Username1.getText();
+            password = TF_Contra1.getText();
+            edad = (Integer) JS_edad.getValue();
+            ID = TF_ID.getText();
+            carrera = TF_Carrera.getText();
+            anos_carrera = (Integer) JS_Anos.getValue();
+            promedio = Double.parseDouble(TF_Promedio.getText());
+            Object t = CB_Falcultad.getSelectedItem();
+            fac += t;
+            Personas pp = new Alumnos(edad, ID, carrera, anos_carrera, promedio, fac, nom, apellido, num_reg, username, password);
+            Alumnos dd = new Alumnos(edad, ID, carrera, anos_carrera, promedio, fac, nom, apellido, num_reg, username, password);
+            ap.getListaPersonas().add(pp);
+            aa.getListaAlumnos().add(dd);
+            ap.escribirArchivo();
+            aa.escribirArchivo();
+            p = ap.getListaPersonas();
+            a = aa.getListaAlumnos();
+
+            DefaultComboBoxModel modelo
+                    = (DefaultComboBoxModel) CB_ModificarAlumnos.getModel();
+            modelo.addElement(new Alumnos(edad, ID, carrera, anos_carrera, promedio, fac, nom, apellido, num_reg, username, password));
+            CB_ModificarAlumnos.setModel(modelo);
+            CB_EliminarAlumnos.setModel(modelo);
+            
+
+            Alumnos alu = new Alumnos(edad, ID, carrera, anos_carrera, promedio, fac, nom, apellido, num_reg, username, password);
+            Object[] newrow = {
+                alu.getNom(),
+                alu.getApellido(),
+                alu.getNum_reg(),
+                alu.getEdad(),
+                alu.getID(),
+                alu.getCarrera(),
+                alu.getAnos_carrera(),
+                alu.getPromedio(),
+                alu.getFac(),};
+            DefaultTableModel modelo1
+                    = (DefaultTableModel) JT_ListarAlumnos.getModel();
+            modelo1.addRow(newrow);
+            JT_ListarAlumnos.setModel(modelo1);
+            
+
+        } catch (IOException ex) {
+             Logger.getLogger(Log_in.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        TF_Nombre1.setText("");
+        TF_Apellido1.setText("");
+        TF_Num_regs1.setText("");
+        TF_Username.setText("");
+        TF_Contra1.setText("");
+        JS_Anos.setValue(0);
+        JS_edad.setValue(0);
+        TF_ID.setText("");
+        TF_Promedio.setValue("");
+        CB_Falcultad.setSelectedIndex(0);
+        JOptionPane.showMessageDialog(this, "Agregado Exitosamente");
+         
+    }//GEN-LAST:event_JB_registrar1MouseClicked
 public void JD_MENUADMIN(){
     JD_MenuAdmin.pack();
         JD_MenuAdmin.setModal(true);
@@ -1386,6 +1464,12 @@ public void JD_ALISTAR(){
         JD_ListarAlumnos.setModal(true);
         JD_ListarAlumnos.setLocationRelativeTo(this);
         JD_ListarAlumnos.setVisible(true);
+}
+public void JD_DLISTAR(){
+    JD_ListarDocentes.pack();
+        JD_ListarDocentes.setModal(true);
+        JD_ListarDocentes.setLocationRelativeTo(this);
+        JD_ListarDocentes.setVisible(true);
 }
 public void JD_AMODIFICAR(){
     JD_ModificarAlumnos.pack();
@@ -1455,6 +1539,7 @@ public void JD_AELIMINAR(){
     private javax.swing.JDialog JD_AgregarProyectos;
     private javax.swing.JDialog JD_EliminarAlumnos;
     private javax.swing.JDialog JD_ListarAlumnos;
+    private javax.swing.JDialog JD_ListarDocentes;
     private javax.swing.JDialog JD_MenuAdmin;
     private javax.swing.JDialog JD_ModificarAlumnos;
     private javax.swing.JSpinner JS_Anos;
@@ -1465,6 +1550,7 @@ public void JD_AELIMINAR(){
     private javax.swing.JSpinner JS_Punta;
     private javax.swing.JSpinner JS_edad;
     private javax.swing.JTable JT_ListarAlumnos;
+    private javax.swing.JTable JT_ListarMaestros;
     private javax.swing.JPasswordField PF_pass;
     private javax.swing.JFormattedTextField TF_Apellido;
     private javax.swing.JFormattedTextField TF_Apellido1;
@@ -1556,6 +1642,7 @@ public void JD_AELIMINAR(){
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JToolBar jToolBar3;
     // End of variables declaration//GEN-END:variables
